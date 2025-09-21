@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('managers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('tarea',60);
+            $table->string('nombre',60);
             $table->string('cargo',60);
             $table->timestamps();
         });
