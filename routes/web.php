@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', 'App\Http\Controllers\MainController@index')->name('inicio'); 
+
+// Tareas
+Route::match(['get','post'],'listar_tareas',[MainController::class,'tasksList'])->name('tasks.list');
+Route::get('nueva_tarea',[MainController::class,'tasksCreate'])->name('tasks.create');
+
+// Relaciones
+//Route::get('editar-relacion/{task_id}/{city_id}', 'RelationsController@relationEdit')->name('relationEdit');

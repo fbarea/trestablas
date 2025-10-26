@@ -15,6 +15,7 @@ class Manager extends Model
         'cargo'
     ];
 
+    /*
     public function cities(){
         return $this->belongsToMany(City::class,'city_manager_task')
         ->withTimestamps()
@@ -26,5 +27,11 @@ class Manager extends Model
         ->withTimestamps()
         ->withPivot('f_inicio','f_final','activa');
     }
+    */
+
+    public function assignments(){
+        return $this->hasMany(CityManagerTask::class);
+    }
+
 
 }

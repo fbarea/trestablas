@@ -15,16 +15,23 @@ class Task extends Model
         'descripcion'
     ];
 
+    /*
     public function cities(){
         return $this->belongsToMany(City::class,'city_manager_task')
         ->withTimestamps()
-        ->withPivot('manager_id','f_inicio','f_final','activa');
+        ->withPivot('manager_id','f_inicio','f_final','activa')
+        ->orderBy('ciudad');
     }
 
     public function managers(){
         return $this->belongsToMany(Manager::class,'city_manager_task')
         ->withTimestamps()
         ->withPivot('f_inicio','f_final','activa');
+    }
+    */
+
+    public function assignments(){
+        return $this->hasMany(CityManagerTask::class);
     }
 
 }

@@ -37,7 +37,7 @@ class TaskFactory extends Factory
     {
         return [
             'tarea' => $this->faker->unique()->randomElement($this->tareasPosibles),
-            'descripcion' => $this->faker->sentence(20)
+            'descripcion' => $this->faker->sentence(20),
         ];
     }
 }

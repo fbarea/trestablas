@@ -19,4 +19,17 @@ class CityManagerTask extends Pivot
         'f_final',
         'activa'
     ];
+
+    // relaciones
+    public function task(){
+        return $this->belongsTo(Task::class);
+    }
+
+    public function city(){
+        return $this->belongsTo(City::class);
+    }
+
+    public function manager(){
+        return $this->belongsTo(Manager::class);
+    }
 }

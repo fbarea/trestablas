@@ -20,8 +20,8 @@ return new class extends Migration
             $table->unsignedBigInteger('task_id');
             $table->foreign('task_id')->references('id')->on('tasks');
 
-            $table->date('f_inicio');
-            $table->date('f_final');
+            $table->date('f_inicio')->nullable();
+            $table->date('f_final')->nullable();
             $table->char('activa',1);
             $table->timestamps();
         });

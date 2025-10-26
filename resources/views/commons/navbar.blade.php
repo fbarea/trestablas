@@ -9,39 +9,20 @@
           
           
           <li class="nav-item active">
-              <a class="nav-link" href="#">Inicio</a>
+              <a class="nav-link" href="{{ route('inicio') }}">Inicio</a>
           </li>
 
           
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownShoppings" role="button" 
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Colecciones
+                  Gestionar tareas
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownShoppings">
-                  <a class="dropdown-item" href="#">Crea colección</a>
+                  <a class="dropdown-item" href="{{ route('tasks.list') }}">Listado</a>
               </div>
           </li>
-
           
-          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProducts" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Métodos
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownProducts">
-                  <a class="dropdown-item" href="#">Dividir colección</a>  
-              </div>
-          </li>
-
-          
-          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownShops" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Comercios
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownShops">
-                  <a class="dropdown-item" href="#">Listado</a>
-              </div>
-          </li>
       </ul>
   </div>
 </nav>
