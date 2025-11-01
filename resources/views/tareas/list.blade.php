@@ -27,10 +27,10 @@
         <i class="material-icons icono-de-ver-tareas icono-verde" data-icon="{{ $tarea->id }}">visibility</i>
       </td>
       <td>
-        <a href="#">{{$tarea->tarea}}</a>
+        <a href="{{ route('tasks.edit',['id'=>$tarea->id]) }}">{{$tarea->tarea}}</a>
       </td>
       <td class="celda-de-eliminar-tarea">
-        <a href="#">
+        <a onclick="return confirm('¿Eliminar la tarea: {{ $tarea->tarea  }}?')" href="{{ route('tasks.destroy',['id'=>$tarea->id]) }}">
           <i class="material-icons icono-de-borrar-tarea" data-icon="{{ $tarea->id }}" title="Borrar">delete</i>
         </a>
       </td>
@@ -48,7 +48,7 @@
         <table class="tabla-de-ciudades">
         @foreach($tarea->cities as $city)
           <tr>
-            <td class="celda-de-nombre-de-ciudad">{ $city->ciudad }}({{ $city->pais }})</td>
+            <td class="celda-de-nombre-de-ciudad">{{ $city->ciudad }} ({{ $city->pais }})</td>
             <td class="celda-de-nombre-de-responsable">{{ $city->manager->nombre }}</td>
             <td class="celda-de-estado">
               <i class="material-icons {{($city->activa == '0') ? 'icono-clase-inactiva' : 'icono-clase-activa'}}">fiber_manual_record</i>
@@ -85,3 +85,4 @@
 @section('scripts')
 <script languaje="javascript" src="{{ asset('js/tareas/tareas.js') }}"></script>
 @endsection
+

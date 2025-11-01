@@ -18,8 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\MainController@index')->name('inicio'); 
 
 // Tareas
-Route::match(['get','post'],'listar_tareas',[MainController::class,'tasksList'])->name('tasks.list');
-Route::get('nueva_tarea',[MainController::class,'tasksCreate'])->name('tasks.create');
+Route::match(['get','post'],'listar_tareas',[MainController::class,'taskList'])->name('tasks.list');
+Route::get('nueva_tarea',[MainController::class,'taskCreate'])->name('tasks.create');
+Route::post('grabar_tarea',[MainController::class,'taskStore'])->name('tasks.store');
+Route::get('editar_tarea/{id}',[MainController::class,'taskEdit'])->name('tasks.edit');
+Route::post('actualizar_tarea',[MainController::class,'taskUpdate'])->name('tasks.update');
+Route::get('borrar_tarea/{id}',[MainController::class,'taskDestroy'])->name('tasks.destroy');
 
 // Relaciones
 //Route::get('editar-relacion/{task_id}/{city_id}', 'RelationsController@relationEdit')->name('relationEdit');
