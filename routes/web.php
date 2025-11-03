@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\RelationsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,4 +27,6 @@ Route::post('actualizar_tarea',[MainController::class,'taskUpdate'])->name('task
 Route::get('borrar_tarea/{id}',[MainController::class,'taskDestroy'])->name('tasks.destroy');
 
 // Relaciones
+Route::get('borrar_ciudad/{task_id}/{city_id}',[RelationsController::class,'relationDestroy'])->name('relations.destroy');
+
 //Route::get('editar-relacion/{task_id}/{city_id}', 'RelationsController@relationEdit')->name('relationEdit');

@@ -62,7 +62,9 @@
               @if ($tarea->cities->count() == 1)
                 <i class="material-icons icono-de-borrar-ciudad-anulado" title="No se puede borrar">delete</i>
               @else
-                <a href="#"><i class="material-icons icono-de-borrar-ciudad" title="Borrar">delete</i></a>
+                <a href="{{ route('relations.destroy',['task_id'=>$tarea->id,'city_id'=>$city->id]) }}">
+                  <i class="material-icons icono-de-borrar-ciudad" title="Borrar">delete</i>
+                </a>
               @endif
             </td>
           </tr>
