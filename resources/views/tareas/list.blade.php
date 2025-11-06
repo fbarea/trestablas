@@ -54,7 +54,7 @@
               <i class="material-icons {{($city->activa == '0') ? 'icono-clase-inactiva' : 'icono-clase-activa'}}">fiber_manual_record</i>
             </td>
             <td class="celda-de-editar-ciudad">
-              <a href="#">
+              <a href="{{ route('relations.edit',['task_id'=>$tarea->id,'city_id'=>$city->id]) }}">
                 <i class="material-icons icono-de-editar-ciudad icono-editar" title="Editar">edit</i>
               </a>
             </td>

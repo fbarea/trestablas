@@ -27,6 +27,8 @@ Route::post('actualizar_tarea',[MainController::class,'taskUpdate'])->name('task
 Route::get('borrar_tarea/{id}',[MainController::class,'taskDestroy'])->name('tasks.destroy');
 
 // Relaciones
+Route::get('editar_relacion/{task_id}/{city_id}',[RelationsController::class,'relationEdit'])->name('relations.edit');
+Route::post('actualizar_relacion/{task_id}/{city_id}',[RelationsController::class,'relationUpdate'])->name('relations.update');
 Route::get('borrar_ciudad/{task_id}/{city_id}',[RelationsController::class,'relationDestroy'])->name('relations.destroy');
 
 //Route::get('editar-relacion/{task_id}/{city_id}', 'RelationsController@relationEdit')->name('relationEdit');
