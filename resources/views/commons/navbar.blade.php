@@ -1,28 +1,35 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Tres tablas</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-  </button>
+    <div class="container-fluid">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">Tres tablas</a>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-          
-          
-          <li class="nav-item active">
-              <a class="nav-link" href="{{ route('inicio') }}">Inicio</a>
-          </li>
+        <!-- Botón hamburguesa -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-          
-          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownShoppings" role="button" 
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Gestionar tareas
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownShoppings">
-                  <a class="dropdown-item" href="{{ route('tasks.list') }}">Listado</a>
-              </div>
-          </li>
-          
-      </ul>
-  </div>
+        <!-- Menú -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+                <!-- Inicio -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('inicio') }}">Inicio</a>
+                </li>
+
+                <!-- Dropdown Gestionar tareas -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownShoppings" role="button" 
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        Gestionar tareas
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownShoppings">
+                        <li>
+                            <a class="dropdown-item" href="{{ route('tasks.list') }}">Listado</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>

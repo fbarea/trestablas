@@ -1,3 +1,12 @@
+
+/*main-layout*/
+
+.content-wrapper {
+    padding-top: 80px; /* Ajusta según la altura del navbar */
+}
+
+
+
 .icono-rojo, .icono-clase-inactiva {
     color: #b20300;
 }

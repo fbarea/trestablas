@@ -41,20 +41,20 @@
         <tr>
           <td class="celda-de-rotulo-de-ciudades">CIUDADES</td>
           <td class="celda-de-boton-de-nueva-ciudad">
-            <a href="" class="btn btn-primary btn-sm">Nueva</a>
+            <a href="{{ route('relations.create',['task_id'=>$tarea->id]) }}" class="btn btn-primary btn-sm">Nueva</a>
           </td>
         </tr>
         </table>
         <table class="tabla-de-ciudades">
-        @foreach($tarea->cities as $city)
+        @foreach($tarea->assignments as $relacion)
           <tr>
-            <td class="celda-de-nombre-de-ciudad">{{ $city->ciudad }} ({{ $city->pais }})</td>
-            <td class="celda-de-nombre-de-responsable">{{ $city->manager->nombre }}</td>
+            <td class="celda-de-nombre-de-ciudad">{{ $relacion->city->ciudad }} ({{ $relacion->city->pais }})</td>
+            <td class="celda-de-nombre-de-responsable">{{ $relacion->manager->nombre }}</td>
             <td class="celda-de-estado">
-              <i class="material-icons {{($city->activa == '0') ? 'icono-clase-inactiva' : 'icono-clase-activa'}}">fiber_manual_record</i>
+              <i class="material-icons {{($relacion->activa == '0') ? 'icono-clase-inactiva' : 'icono-clase-activa'}}">fiber_manual_record</i>
             </td>
             <td class="celda-de-editar-ciudad">
-              <a href="{{ route('relations.edit',['task_id'=>$tarea->id,'city_id'=>$city->id]) }}">
+              <a href="{{ route('relations.edit',['task_id'=>$tarea->id,'city_id'=>$relacion->city->id]) }}">
                 <i class="material-icons icono-de-editar-ciudad icono-editar" title="Editar">edit</i>
               </a>
             </td>
@@ -62,7 +62,7 @@
               @if ($tarea->cities->count() == 1)
                 <i class="material-icons icono-de-borrar-ciudad-anulado" title="No se puede borrar">delete</i>
               @else
-                <a href="{{ route('relations.destroy',['task_id'=>$tarea->id,'city_id'=>$city->id]) }}">
+                <a href="{{ route('relations.destroy',['task_id'=>$tarea->id,'city_id'=>$relacion->city->id]) }}">
                   <i class="material-icons icono-de-borrar-ciudad" title="Borrar">delete</i>
                 </a>
               @endif
